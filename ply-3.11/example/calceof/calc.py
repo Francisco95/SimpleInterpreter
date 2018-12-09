@@ -119,12 +119,13 @@ def p_error(p):
     else:
         print("Syntax error at EOF")
 
+
 import ply.yacc as yacc
 yacc.yacc()
 
 while 1:
     try:
-        s = raw_input('calc > ')
+        s = input('calc > ')
     except EOFError:
         break
     if not s:
