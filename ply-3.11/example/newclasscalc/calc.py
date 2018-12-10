@@ -89,11 +89,12 @@ class Calc(Parser):
         # print "parsed number %s" % repr(t.value)
         return t
 
-    t_ignore = " \t"
+    t_ignore = " \t\n"
 
     def t_newline(self, t):
         r'\n+'
         t.lexer.lineno += t.value.count("\n")
+        print("new line")
 
     def t_error(self, t):
         print("Illegal character '%s'" % t.value[0])
@@ -161,6 +162,7 @@ class Calc(Parser):
             print("Syntax error at '%s'" % p.value)
         else:
             print("Syntax error at EOF")
+
 
 if __name__ == '__main__':
     calc = Calc()

@@ -2,7 +2,7 @@ import os
 from ply import lex, yacc
 
 
-class Parser(object):
+class MyParser(object):
     """
     Base class for a lexer/parser that has the rules defined as methods.
     Class extracted from PLY examples
@@ -35,7 +35,7 @@ class Parser(object):
                   debugfile=self.debugfile,
                   tabmodule=self.tabmodule)
 
-    def run_inline(self):
+    def run(self):
         """
         run the lexer yacc parser by receiving inline inputs
 
